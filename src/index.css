@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.4), 0 0 40px hsl(var(--primary) / 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 30px hsl(var(--primary) / 0.6), 0 0 60px hsl(var(--primary) / 0.3);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* HotHub Design System - Purple accents
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    --primary: 270 72% 51%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 15%;
+
+    --muted: 0 5% 93%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 0 5% 94%;
+    --accent-foreground: 0 0% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 270 72% 51%;
+
+    --radius: 0.75rem;
+
+    /* HotHub specific tokens - Purple */
+    --brand: 270 72% 51%;
+    --brand-dark: 270 72% 42%;
+    --brand-light: 270 72% 58%;
+    --surface: 0 0% 97%;
+    --surface-hover: 0 0% 94%;
+    --overlay: 0 0% 0%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 270 79% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 270 79% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 12%;
+    --ring: 270 79% 55%;
+
+    /* HotHub specific tokens - Purple */
+    --brand: 270 79% 55%;
+    --brand-dark: 270 79% 45%;
+    --brand-light: 270 79% 65%;
+    --surface: 0 0% 10%;
+    --surface-hover: 0 0% 15%;
+    --overlay: 0 0% 0%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .brand-gradient {
+    @apply bg-gradient-to-r from-[hsl(var(--brand-dark))] via-[hsl(var(--brand))] to-[hsl(var(--brand-light))];
+  }
+
+  .brand-text {
+    @apply bg-gradient-to-r from-[hsl(var(--brand-dark))] via-[hsl(var(--brand))] to-[hsl(var(--brand-light))] bg-clip-text text-transparent;
+  }
+
+  .brand-glow {
+    box-shadow: 0 0 30px hsl(var(--brand) / 0.3), 0 0 60px hsl(var(--brand) / 0.1);
+  }
+
+  /* Legacy support - redirect gold to brand */
+  .gold-gradient {
+    @apply brand-gradient;
+  }
+
+  .gold-text {
+    @apply brand-text;
+  }
+
+  .gold-glow {
+    @apply brand-glow;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    @apply scale-[1.03] md:scale-105;
+    box-shadow: 0 10px 40px hsl(var(--brand) / 0.15);
+  }
+
+  /* Mobile-optimized touch targets */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  /* Safe area for mobile */
+  .safe-area-pb {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .safe-area-pt {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Improved line heights for mobile */
+  .leading-mobile {
+    line-height: 1.5;
+  }
+
+  /* No select for UI elements */
+  .no-select {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+#lovable-badge {
+  display: none !important;
+}
