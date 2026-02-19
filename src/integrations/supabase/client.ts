@@ -3,8 +3,8 @@ import { createClient } from '@supabase/supabase-js';
 import type { Database } from './types';
 
 // Fallback values ensure the app works even if .env is not present during deploy
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://ncznkhjveugqtnienxbp.supabase.co';
-const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5jem5raGp2ZXVncXRuaWVueGJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk1NDE2NDIsImV4cCI6MjA4NTExNzY0Mn0.apCg_Qz9d4qJm8-G1DVxzJwLdKnVRjMnQxFeFp1XTGE';
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://dclhxbldcslkcnzrtjca.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRjbGh4YmxkY3Nsa2NuenJ0amNhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE0ODAzNDQsImV4cCI6MjA4NzA1NjM0NH0.9tQDVsv9ZmNUTXNr3ufIOIs3k1mY1fFrXVz60iX0LUc';
 
 // Import the supabase client like this:
 // import { supabase } from "@/integrations/supabase/client";
